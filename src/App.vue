@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+const getPopupContainer = (node: { parentNode: unknown }) => {
+    if (node) {
+        return node.parentNode
+    }
+    return document.body
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <a-config-provider :getPopupContainer="getPopupContainer">
+  
+    </a-config-provider>
+  797 
 </template>
 
 <style scoped>
